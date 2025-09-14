@@ -560,10 +560,105 @@
         </div>
     </div>
 
+    <!-- Scripts JavaScript IMPORTANTS -->
     <script>
     // Gestion des cookies RGPD
     function checkCookieConsent() {
         if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        localStorage.setItem('cookieDate', new Date().toISOString());
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function refuseCookies() {
+        localStorage.setItem('cookieConsent', 'refused');
+        localStorage.setItem('cookieDate', new Date().toISOString());
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    // FONCTION IMPORTANTE : Ouvrir le bot dans un nouvel onglet
+    function openBotInNewTab() {
+        // Ouvrir le bot dans un nouvel onglet
+        window.open('https://autoai-re-fap-v2.vercel.app/', '_blank');
+        // Cacher la bulle d'information
+        var tooltip = document.getElementById('bot-tooltip');
+        if (tooltip) {
+            tooltip.style.display = 'none';
+        }
+        // Enregistrer que le bot a été ouvert
+        localStorage.setItem('botOpened', 'true');
+    }
+    
+    // Fonction pour fermer la bulle d'information
+    function closeTooltip() {
+        document.getElementById('bot-tooltip').style.display = 'none';
+        localStorage.setItem('tooltipClosed', 'true');
+        localStorage.setItem('tooltipClosedDate', new Date().toISOString());
+    }
+
+    // Afficher la bulle d'information après 5 secondes
+    document.addEventListener('DOMContentLoaded', function() {
+        // Vérifier le consentement cookies
+        checkCookieConsent();
+        
+        // Gérer l'affichage de la bulle d'information
+        var tooltipClosed = localStorage.getItem('tooltipClosed');
+        var botOpened = localStorage.getItem('botOpened');
+        var tooltipClosedDate = localStorage.getItem('tooltipClosedDate');
+        
+        // Si la bulle a été fermée il y a moins de 24h, ne pas la réafficher
+        var shouldShowTooltip = true;
+        if (tooltipClosed && tooltipClosedDate) {
+            var closedTime = new Date(tooltipClosedDate).getTime();
+            var now = new Date().getTime();
+            var hoursSinceClosed = (now - closedTime) / (1000 * 60 * 60);
+            if (hoursSinceClosed < 24) {
+                shouldShowTooltip = false;
+            }
+        }
+        
+        // Si le bot n'a jamais été ouvert et la bulle peut être montrée
+        if (!botOpened && shouldShowTooltip) {
+            // Afficher la bulle après 5 secondes
+            setTimeout(function() {
+                var tooltip = document.getElementById('bot-tooltip');
+                if (tooltip) {
+                    tooltip.style.display = 'block';
+                }
+                
+                // Afficher aussi le badge "NOUVEAU" temporairement
+                var newBadge = document.getElementById('new-badge');
+                if (newBadge) {
+                    newBadge.style.display = 'block';
+                    // Cacher le badge après 10 secondes
+                    setTimeout(function() {
+                        newBadge.style.display = 'none';
+                    }, 10000);
+                }
+            }, 5000);
+            
+            // Auto-cacher la bulle après 30 secondes si pas d'interaction
+            setTimeout(function() {
+                var tooltip = document.getElementById('bot-tooltip');
+                if (tooltip && tooltip.style.display === 'block') {
+                    tooltip.style.display = 'none';
+                }
+            }, 35000);
+        }
+    });
+    </script>
+
+    <!-- Scripts externes -->
+    <script src="assets/js/stores-final.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search-enhanced.js"></script>
+</body>
+</html>        if (!localStorage.getItem('cookieConsent')) {
             document.getElementById('cookie-banner').style.display = 'block';
         }
     }
