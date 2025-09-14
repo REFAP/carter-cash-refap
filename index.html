@@ -22,6 +22,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+    /* Animations pour le widget */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    
+    @keyframes pulseBg {
+        0% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.3); opacity: 0; }
+        100% { transform: scale(1); opacity: 0.7; }
+    }
+    
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    
+    #bot-button button:hover {
+        transform: scale(1.1);
+    }
+    
+    /* Responsive pour le widget */
+    @media (max-width: 768px) {
+        #bot-popup > div {
+            width: 95% !important;
+            height: 90% !important;
+            margin: 5% auto !important;
+            max-width: none !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        #bot-button {
+            bottom: 20px !important;
+            right: 20px !important;
+        }
+        
+        #bot-button button {
+            width: 60px !important;
+            height: 60px !important;
+            font-size: 1.5rem !important;
+        }
+    }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -380,90 +432,22 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <!-- Disclaimer Important -->
-            <div style="background: #1a1a1a; color: #ffc107; padding: 20px; margin-bottom: 30px; border-left: 4px solid #ffc107; text-align: center;">
-                <p style="margin: 0; font-weight: 600;">
-                    ⚠️ <strong>Important :</strong> Re-FAP n'est pas le vendeur du service. Le service de nettoyage FAP est commercialisé et exécuté par Carter-Cash. 
-                    Re-FAP fournit uniquement la technologie et l'animation commerciale. Pour toute réclamation concernant le service, contactez directement Carter-Cash.
-                </p>
-            </div>
-            
-            <!-- Contenu principal du footer -->
-            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
-                <!-- Section Re-FAP -->
-                <div class="footer-section">
-                    <h3 style="color: #ffc107; margin-bottom: 15px;">Re-FAP</h3>
-                    <p style="margin-bottom: 10px;">Fournisseur de solutions professionnelles de nettoyage FAP</p>
-                    <p style="font-style: italic; color: #999; font-size: 0.9em;">
-                        Nous équipons le réseau Carter-Cash avec notre technologie innovante
-                    </p>
-                    <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
-                        SARL unipersonnelle<br>
-                        Capital : 25 000 €<br>
-                        RCS Clermont-Ferrand B 920 254 802<br>
-                        SIRET : 920 254 802 00027
-                    </p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2024 Re-FAP × Carter-Cash</p>
+                    <p>Service de nettoyage FAP professionnel</p>
                 </div>
-                
-                <!-- Section Service -->
-                <div class="footer-section">
-                    <h3 style="color: #ffc107; margin-bottom: 15px;">Le Service</h3>
-                    <p style="margin-bottom: 10px;"><strong>Service vendu et opéré par :</strong></p>
-                    <p style="font-size: 1.2em; font-weight: bold; color: #fff; margin: 10px 0;">CARTER-CASH</p>
-                    <p style="line-height: 1.8;">
-                        ✅ Facturation Carter-Cash<br>
-                        ✅ Garantie 1 an Carter-Cash<br>
-                        ✅ SAV assuré par Carter-Cash
-                    </p>
+                <div class="footer-links">
+                    <a href="#" rel="noopener">Mentions légales</a>
+                    <a href="#" rel="noopener">CGV</a>
+                    <a href="#" rel="noopener">Contact</a>
                 </div>
-                
-                <!-- Section Informations -->
-                <div class="footer-section">
-                    <h3 style="color: #ffc107; margin-bottom: 15px;">Informations</h3>
-                    <p style="margin-bottom: 10px;">
-                        <a href="info-service.html" style="color: #fff; text-decoration: none;">📋 Comment ça marche ?</a>
-                    </p>
-                    <p style="margin-bottom: 10px;">
-                        <a href="mentions-legales.html" style="color: #fff; text-decoration: none;">📜 Mentions légales</a>
-                    </p>
-                    <p style="margin-bottom: 10px;">
-                        <a href="rgpd.html" style="color: #fff; text-decoration: none;">🔒 Protection des données</a>
-                    </p>
-                    <p style="margin-bottom: 10px;">
-                        <a href="#trouver-magasin" style="color: #fff; text-decoration: none;">📍 Trouver un magasin</a>
-                    </p>
-                </div>
-                
-                <!-- Section Contact -->
-                <div class="footer-section">
-                    <h3 style="color: #ffc107; margin-bottom: 15px;">Contact</h3>
-                    <p style="margin-bottom: 15px;">
-                        <strong>Questions sur le service :</strong><br>
-                        <span style="color: #999;">Contactez votre magasin Carter-Cash</span>
-                    </p>
-                    <p style="margin-bottom: 15px;">
-                        <strong>Questions sur la technologie Re-FAP :</strong><br>
-                        <a href="mailto:contact@re-fap.fr" style="color: #ffc107; text-decoration: none;">contact@re-fap.fr</a>
-                    </p>
-                    <p style="margin-bottom: 15px;">
-                        <strong>Siège social :</strong><br>
-                        <span style="color: #999; font-size: 0.9em;">
-                            13 Cours Sablon<br>
-                            63000 Clermont-Ferrand
-                        </span>
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #333; color: #999;">
-                <p>&copy; 2024 Re-FAP - Technologie de nettoyage FAP professionnelle</p>
-                <p style="font-size: 0.85em;">Service de nettoyage FAP disponible dans 94 magasins Carter-Cash de France</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bouton flottant pour ouvrir le bot avec message incitatif -->
+    <!-- WIDGET BOT DIAGNOSTIC FAP -->
+    <!-- Bouton flottant avec bulle d'information -->
     <div id="bot-button" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
         <!-- Bulle d'information -->
         <div id="bot-tooltip" style="position: absolute; bottom: 85px; right: 0; background: white; color: #333; padding: 15px 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); min-width: 250px; animation: slideIn 0.5s ease-out; display: none;">
@@ -495,7 +479,7 @@
             IA
         </span>
         
-        <!-- Badge NOUVEAU (optionnel, apparaît temporairement) -->
+        <!-- Badge NOUVEAU (apparaît temporairement) -->
         <span id="new-badge" style="position: absolute; top: -10px; left: -60px; background: #ffc107; color: #000; padding: 5px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; white-space: nowrap; animation: bounce 1s infinite; display: none;">
             NOUVEAU !
         </span>
@@ -509,7 +493,7 @@
                 <h3 style="margin: 0; color: white;">Diagnostic FAP IA</h3>
                 <button onclick="closeBotPopup()" style="background: transparent; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 10px;">✕</button>
             </div>
-            <!-- iFrame -->
+            <!-- iFrame du bot -->
             <iframe 
                 src="https://autoai-re-fap-v2.vercel.app/" 
                 width="100%" 
@@ -518,124 +502,10 @@
             </iframe>
         </div>
     </div>
+    <!-- FIN WIDGET BOT DIAGNOSTIC -->
 
-    <!-- Bannière Cookies RGPD -->
-    <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #333; color: white; padding: 20px; display: none; z-index: 9999;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <p style="margin: 0; flex: 1;">🍪 Ce site utilise des cookies pour améliorer votre expérience. <a href="rgpd.html#cookies" style="color: #ffc107;">En savoir plus</a></p>
-            <div style="display: flex; gap: 10px;">
-                <button onclick="acceptCookies()" style="background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">Accepter</button>
-                <button onclick="refuseCookies()" style="background: #dc3545; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">Refuser</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Styles CSS additionnels -->
-    <style>
-    @keyframes moveGrid {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(50px, 50px); }
-    }
-    
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-    
-    @keyframes pulseBg {
-        0% { transform: scale(1); opacity: 0.7; }
-        50% { transform: scale(1.3); opacity: 0; }
-        100% { transform: scale(1); opacity: 0.7; }
-    }
-    
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateX(20px); }
-        to { opacity: 1; transform: translateX(0); }
-    }
-    
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
-    }
-    
-    #bot-button button:hover {
-        transform: scale(1.1);
-    }
-    
-    .nav-link {
-        color: var(--dark);
-        font-weight: 600;
-        text-decoration: none;
-        padding: 8px 16px;
-        border-radius: 8px;
-        transition: all 0.3s;
-    }
-    
-    .nav-link:hover {
-        background: rgba(102, 126, 234, 0.1);
-        color: #667eea;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-        #diagnostic-ia h2 { font-size: 1.75rem !important; }
-        #diagnostic-ia iframe { height: 650px; }
-        
-        #bot-popup > div {
-            width: 95% !important;
-            height: 90% !important;
-            margin: 5% auto !important;
-            max-width: none !important;
-        }
-        
-        .nav-actions {
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .nav-link {
-            font-size: 0.9rem;
-            padding: 6px 12px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        #diagnostic-ia iframe { height: 550px; }
-        
-        #bot-button {
-            bottom: 20px !important;
-            right: 20px !important;
-        }
-        
-        #bot-button button {
-            width: 60px !important;
-            height: 60px !important;
-            font-size: 1.5rem !important;
-        }
-    }
-    </style>
-
+    <!-- Scripts -->
     <script>
-    // Gestion des cookies RGPD
-    function checkCookieConsent() {
-        if (!localStorage.getItem('cookieConsent')) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        }
-    }
-
-    function acceptCookies() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        localStorage.setItem('cookieDate', new Date().toISOString());
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    function refuseCookies() {
-        localStorage.setItem('cookieConsent', 'refused');
-        localStorage.setItem('cookieDate', new Date().toISOString());
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-
     // Fonctions pour le popup bot
     function openBotPopup() {
         document.getElementById('bot-popup').style.display = 'block';
@@ -665,8 +535,6 @@
 
     // Afficher la bulle d'information après 5 secondes
     document.addEventListener('DOMContentLoaded', function() {
-        checkCookieConsent();
-        
         // Vérifier si l'utilisateur n'a pas déjà fermé la bulle récemment
         const tooltipClosed = localStorage.getItem('tooltipClosed');
         const botOpened = localStorage.getItem('botOpened');
@@ -708,8 +576,7 @@
         }
     });
     </script>
-
-    <!-- Scripts -->
+    
     <script src="assets/js/stores-final.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/search-enhanced.js"></script>
