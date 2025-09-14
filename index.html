@@ -9,7 +9,7 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Nettoyage FAP chez Carter-Cash - 99€ au lieu de 2000€">
     <meta property="og:description" content="Service de nettoyage FAP disponible dans tous les Carter-Cash de France. Économisez jusqu'à 90% sur le remplacement.">
-    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:image" content="assets/images/20231107_142801.jpg">
     <meta property="og:url" content="https://refap.github.io/carter-cash-refap/">
     
     <!-- Favicon -->
@@ -29,9 +29,9 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="assets/images/logo-refap.svg" alt="Re-FAP" height="40">
+                    <img src="assets/images/Re-Fap_Logo_Couleur.png" alt="Re-FAP" height="40">
                     <span class="logo-separator">×</span>
-                    <img src="assets/images/logo-carter-cash.svg" alt="Carter-Cash" height="40">
+                    <img src="assets/images/logo carter cash.jpg" alt="Carter-Cash" height="40">
                 </div>
                 <div class="nav-actions">
                     <a href="tel:0800737327" class="nav-phone">📞 0800 737 327</a>
@@ -53,7 +53,7 @@
                         Garantie 1 an • Service en 4h ou 48h max
                     </p>
                     <div class="hero-features">
-                        <div class="feature">✓ 200+ magasins en France</div>
+                        <div class="feature">✓ 94 magasins en France</div>
                         <div class="feature">✓ Sans rendez-vous</div>
                         <div class="feature">✓ Garantie 1 an</div>
                     </div>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/images/fap-hero.jpg" alt="Filtre à particules" loading="eager">
+                    <img src="assets/images/20231107_142801.jpg" alt="Machine Re-FAP professionnelle" loading="eager">
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-value">10x</span>
@@ -92,7 +92,7 @@
                     <span>FAP nettoyés</span>
                 </div>
                 <div class="trust-item">
-                    <strong>200+</strong>
+                    <strong>94</strong>
                     <span>Magasins Carter-Cash</span>
                 </div>
                 <div class="trust-item">
@@ -102,6 +102,35 @@
                 <div class="trust-item">
                     <strong>1 an</strong>
                     <span>Garantie</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Machine Re-FAP -->
+    <section class="machine-section">
+        <div class="container">
+            <h2 class="section-title">Notre machine Re-FAP haute technologie</h2>
+            <div class="machine-content">
+                <div class="machine-image">
+                    <img src="assets/images/20231107_142801.jpg" alt="Machine Re-FAP professionnelle" loading="lazy">
+                </div>
+                <div class="machine-info">
+                    <h3>⚡ Technologie de nettoyage avancée</h3>
+                    <ul>
+                        <li>✓ Nettoyage par injection haute pression</li>
+                        <li>✓ Produits écologiques certifiés</li>
+                        <li>✓ Efficacité garantie à 95%</li>
+                        <li>✓ Préserve votre FAP d'origine</li>
+                    </ul>
+                    <div class="machine-locations">
+                        <h4>Disponible en SERVICE EXPRESS 4h :</h4>
+                        <div class="location-badges">
+                            <span class="location-badge">📍 Lambres-lez-Douai (59552)</span>
+                            <span class="location-badge">📍 Thiais (94320)</span>
+                        </div>
+                    </div>
+                    <p class="machine-price">💰 Tarif : 99-149€ seulement</p>
                 </div>
             </div>
         </div>
@@ -148,12 +177,14 @@
                     <ul class="type-features">
                         <li>Machine Re-FAP sur place</li>
                         <li>Nettoyage immédiat</li>
-                        <li>20 magasins équipés</li>
+                        <li>2 magasins équipés</li>
                         <li>Idéal si urgence</li>
                     </ul>
-                    <button onclick="showEquippedStores()" class="btn btn-outline">
-                        Voir les magasins équipés
-                    </button>
+                    <div class="equipped-stores-list">
+                        <p><strong>Magasins équipés :</strong></p>
+                        <p>• Lambres-lez-Douai (59)</p>
+                        <p>• Thiais (94)</p>
+                    </div>
                 </div>
                 
                 <div class="type-card standard">
@@ -165,11 +196,11 @@
                     <ul class="type-features">
                         <li>Envoi à l'atelier Re-FAP</li>
                         <li>Retour rapide garanti</li>
-                        <li>Tous les Carter-Cash</li>
+                        <li>92 magasins Carter-Cash</li>
                         <li>Transport inclus</li>
                     </ul>
                     <div class="type-availability">
-                        ✅ Disponible dans les 200+ magasins
+                        ✅ Disponible dans tous les Carter-Cash de France
                     </div>
                 </div>
             </div>
@@ -179,16 +210,19 @@
     <!-- Recherche magasin -->
     <section id="trouver-magasin" class="store-finder">
         <div class="container">
-            <h2 class="section-title">Trouvez votre Carter-Cash</h2>
+            <h2 class="section-title">Trouvez votre Carter-Cash parmi nos 94 magasins</h2>
             <div class="search-container">
                 <div class="search-box">
                     <input type="text" 
                            id="search-input" 
-                           placeholder="Code postal ou ville..."
+                           placeholder="Code postal, département ou ville..."
                            maxlength="50">
                     <button onclick="searchStores()" class="btn btn-primary">
                         🔍 Rechercher
                     </button>
+                </div>
+                <div class="search-tips">
+                    💡 Astuce : Tapez "59" pour le Nord, "94" pour le Val-de-Marne, etc.
                 </div>
                 <div id="search-results" class="search-results"></div>
                 <div class="all-stores">
@@ -196,7 +230,7 @@
                        target="_blank" 
                        rel="noopener"
                        class="btn btn-outline">
-                        Voir tous les magasins Carter-Cash →
+                        Voir la carte des magasins Carter-Cash →
                     </a>
                 </div>
             </div>
@@ -294,8 +328,12 @@
                     <p>Oui, notre procédé élimine 95% des suies et redonne au FAP ses performances d'origine. Nous garantissons le résultat pendant 1 an.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Combien de temps dure le nettoyage ?</summary>
-                    <p>4 heures dans les magasins équipés de machines Re-FAP, 48 heures maximum pour les autres (envoi atelier).</p>
+                    <summary>Où sont les machines Re-FAP ?</summary>
+                    <p>Les machines sont installées dans 2 magasins : Lambres-lez-Douai (59552) et Thiais (94320). Service EXPRESS en 4h dans ces magasins.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Et dans les autres Carter-Cash ?</summary>
+                    <p>Les 92 autres magasins proposent le service avec envoi à l'atelier Re-FAP. Retour garanti sous 48h. Même qualité de nettoyage !</p>
                 </details>
                 <details class="faq-item">
                     <summary>Faut-il prendre rendez-vous ?</summary>
@@ -312,6 +350,10 @@
                 <details class="faq-item">
                     <summary>Quelle différence avec le remplacement ?</summary>
                     <p>Le nettoyage coûte 10x moins cher (99-199€ vs 1000-2000€) et préserve votre FAP d'origine. C'est écologique et économique.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Comment savoir si mon magasin est équipé ?</summary>
+                    <p>Seuls Lambres-lez-Douai (59) et Thiais (94) ont la machine. Utilisez notre recherche ci-dessus pour vérifier.</p>
                 </details>
             </div>
         </div>
@@ -341,7 +383,8 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <p>&copy; 2024 Re-FAP × Carter-Cash. Tous droits réservés.</p>
-                    <p>Service de nettoyage FAP disponible dans tous les Carter-Cash de France</p>
+                    <p>Service de nettoyage FAP disponible dans 94 magasins Carter-Cash de France</p>
+                    <p>Machines Re-FAP à Lambres-lez-Douai et Thiais</p>
                 </div>
                 <div class="footer-links">
                     <a href="#mentions">Mentions légales</a>
@@ -353,7 +396,8 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="assets/js/stores-final.js"></script>
     <script src="assets/js/main.js"></script>
-<script src="assets/js/search-enhanced.js"></script>
+    <script src="assets/js/search-enhanced.js"></script>
 </body>
 </html>
