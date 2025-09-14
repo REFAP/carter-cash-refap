@@ -1,0 +1,70 @@
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+.directory
+
+# Éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Build
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Temporaire
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Sauvegarde
+*.bak
+*.backup
+*.old
+
+# Données sensibles
+config/secrets.json
+*.key
+*.pem
+*.crt
+
+# Images originales (garder seulement les optimisées)
+assets/images/originals/
+*.psd
+*.ai
+*.sketch
+
+# Documentation locale
+docs/private/
+
+# Tests
+coverage/
+.nyc_output/
+
+# Divers
+.sass-cache/
+*.map
