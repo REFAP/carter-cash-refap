@@ -1,6 +1,7 @@
 /**
  * Fonction de recherche améliorée pour Carter-Cash
  * Support de la recherche par département
+ * TOUS LES MAGASINS UTILISENT LE NUMÉRO : 0473378821
  */
 
 // Remplacez la fonction searchStores() dans votre main.js par celle-ci :
@@ -190,9 +191,11 @@ function displaySearchResults(results, searchTerm) {
 
 /**
  * Créer une carte de magasin
+ * NUMÉRO UNIQUE POUR TOUS LES MAGASINS : 0473378821
  */
 function createStoreCard(store, isEquipped) {
-    const phone = store.phone || 'Non disponible';
+    // FORCER LE NUMÉRO UNIQUE POUR TOUS LES MAGASINS
+    const phone = "0473378821";
     const hours = store.hours || 'Lun-Sam: 9h-19h';
     
     return `
@@ -210,11 +213,9 @@ function createStoreCard(store, isEquipped) {
                 </p>
             </div>
             <div class="store-actions">
-                ${phone !== 'Non disponible' ? `
-                    <a href="tel:${phone.replace(/\s/g, '')}" class="btn btn-primary btn-sm">
-                        Appeler
-                    </a>
-                ` : ''}
+                <a href="tel:${phone.replace(/\s/g, '')}" class="btn btn-primary btn-sm">
+                    Appeler
+                </a>
                 ${store.lat && store.lng ? `
                     <button onclick="showDirections(${store.lat}, ${store.lng})" class="btn btn-outline btn-sm">
                         Itinéraire
@@ -298,4 +299,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('✅ Fonction de recherche améliorée chargée');
-console.log('📍 Recherche par département activée (ex: tapez "94" pour tout le Val-de-Marne)');
+console.log('🔍 Recherche par département activée (ex: tapez "94" pour tout le Val-de-Marne)');
+console.log('☎️ Numéro unique pour tous les magasins : 0473378821');
