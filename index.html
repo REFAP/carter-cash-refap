@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nettoyage FAP 99€ chez Carter-Cash | Service Re-FAP</title>
-    <meta name="description" content="Nettoyez votre FAP pour 99-199€ chez Carter-Cash. Service disponible dans 200+ magasins en France. Alternative économique au remplacement. Garantie 1 an.">
+    <meta name="description" content="Nettoyez votre FAP pour 99-199€ chez Carter-Cash. Service disponible dans 94 magasins en France. Alternative économique au remplacement. Garantie 1 an.">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Nettoyage FAP chez Carter-Cash - 99€ au lieu de 2000€">
@@ -500,6 +500,13 @@
         color: var(--primary-dark);
         font-weight: 600;
     }
+    
+    /* Compare Solutions Section */
+    .compare-solutions {
+        background: #f0f9f4;
+        padding: 60px 0;
+        text-align: center;
+    }
 
     /* Store finder optimisé */
     .store-finder {
@@ -876,6 +883,20 @@
         font-size: 11px;
         font-weight: 700;
     }
+    
+    /* Garage Nudge */
+    #garage-nudge {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        max-width: 300px;
+        display: none;
+        z-index: 999;
+    }
 
     /* Animations */
     @keyframes slideIn {
@@ -1002,6 +1023,11 @@
                         <a href="#trouver-magasin" class="btn btn-primary">📍 Trouver mon Carter-Cash</a>
                         <a href="#comment-ca-marche" class="btn btn-secondary">Comment ça marche ?</a>
                     </div>
+                    <div style="margin-top: 15px;">
+                        <a href="https://refap.github.io/re-fap-landing/" target="_blank" style="color: var(--primary); text-decoration: underline;">
+                            Vous préférez une solution clé en main ? Voir notre offre garage →
+                        </a>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="assets/images/Machine re-fap chez carter-cash.png" alt="Machine Re-FAP professionnelle">
@@ -1080,18 +1106,20 @@
             <div class="process-grid">
                 <div class="process-card">
                     <div class="process-icon">🔧</div>
-                 <h3>1. Démontez votre FAP</h3>
+                    <h3>1. Démontez votre FAP</h3>
                     <p>ou faites-le démonter par un professionnel pour une prise en charge complète</p>
-                    <a href="https://re-fap.fr/trouver_garage_partenaire/" target="_blank" class="link">Trouver un garage partenaire →</a>
-                   </div>
-              <div class="process-card">
-    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <img src="assets/images/logo carter cash.jpg" alt="Carter-Cash" style="height: 50px; width: auto;">
-    </div>
-    <h3>2. Déposez chez Carter-Cash</h3>
-    <p>Dans n'importe quel magasin, sans RDV</p>
-    <a href="#trouver-magasin" class="link">Trouver un magasin →</a>
-</div>
+                    <a href="https://refap.github.io/re-fap-landing/" target="_blank" class="link">
+                        Découvrir la solution clé en main →
+                    </a>
+                </div>
+                <div class="process-card">
+                    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                        <img src="assets/images/logo carter cash.jpg" alt="Carter-Cash" style="height: 50px; width: auto;">
+                    </div>
+                    <h3>2. Déposez chez Carter-Cash</h3>
+                    <p>Dans n'importe quel magasin, sans RDV</p>
+                    <a href="#trouver-magasin" class="link">Trouver un magasin →</a>
+                </div>
                 <div class="process-card">
                     <div class="process-icon">✨</div>
                     <h3>3. Récupérez-le propre</h3>
@@ -1143,6 +1171,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    <!-- Section Comparer les Solutions -->
+    <section class="compare-solutions">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Besoin d'une prise en charge complète ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                Si vous préférez ne pas démonter le FAP vous-même, découvrez notre solution tout compris
+            </p>
+            <a href="https://refap.github.io/re-fap-landing/" target="_blank" class="btn btn-primary" style="font-size: 18px; padding: 15px 40px;">
+                🔧 Voir la solution clé en main en garage →
+            </a>
+            <p style="margin-top: 20px; color: var(--gray);">
+                Diagnostic + Démontage + Nettoyage + Remontage + Garantie
+            </p>
         </div>
     </section>
 
@@ -1212,6 +1256,21 @@
                     </div>
                     
                     <div class="form-group full">
+                        <label for="service-type">Type de service souhaité *</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="depot">Dépôt Carter-Cash (FAP déjà démonté)</option>
+                            <option value="garage">Solution clé en main en garage</option>
+                            <option value="indecis">Je ne sais pas encore</option>
+                        </select>
+                        <p style="font-size: 14px; margin-top: 5px;">
+                            <a href="https://refap.github.io/re-fap-landing/#quiz" target="_blank" style="color: var(--primary);">
+                                → Faites le quiz pour choisir la meilleure solution
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <div class="form-group full">
                         <label for="problem">Votre problème *</label>
                         <select id="problem" name="problem" required>
                             <option value="">Sélectionnez...</option>
@@ -1278,7 +1337,13 @@
                 </details>
                 <details class="faq-item">
                     <summary>Je ne sais pas démonter mon FAP</summary>
-                    <p>Demandez à votre mécanicien habituel ou faites-le démonter par <a href="https://refap.github.io/re-fap-landing/">un de nos garages partenaires pour une prise en charge complète</a></p>
+                    <p>
+                        Deux options s'offrent à vous :
+                        <br>• Demandez à votre mécanicien habituel de le démonter
+                        <br>• <a href="https://refap.github.io/re-fap-landing/" target="_blank" style="color: var(--primary); font-weight: 600;">
+                        Optez pour notre solution clé en main avec prise en charge complète en garage partenaire →
+                        </a>
+                    </p>
                 </details>
                 <details class="faq-item">
                     <summary>Quelle différence avec le remplacement ?</summary>
@@ -1344,11 +1409,13 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Informations</h3>
-                    <p><a href="info-service.html">📋 Comment ça marche ?</a></p>
+                    <h3>Nos Solutions</h3>
+                    <p><a href="#trouver-magasin">📍 Dépôt en magasin Carter-Cash</a></p>
+                    <p><a href="https://refap.github.io/re-fap-landing/">🔧 Solution clé en main en garage</a></p>
+                    <p><a href="https://refap.github.io/re-fap-landing/#quiz">🎯 Quiz : quelle solution choisir ?</a></p>
+                    <p style="margin-top: 15px;"><a href="info-service.html">📋 Comment ça marche ?</a></p>
                     <p><a href="mentions-legales.html">📜 Mentions légales</a></p>
                     <p><a href="rgpd.html">🔒 Protection des données</a></p>
-                    <p><a href="#trouver-magasin">📍 Trouver un magasin</a></p>
                 </div>
                 
                 <div class="footer-section">
@@ -1390,6 +1457,16 @@
         </button>
         
         <span class="badge-ia">IA</span>
+    </div>
+    
+    <!-- Bannière flottante Garage (apparaît après 30 secondes) -->
+    <div id="garage-nudge">
+        <button onclick="this.parentElement.style.display='none'" style="position: absolute; top: 5px; right: 5px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
+        <p style="font-weight: 600; margin-bottom: 10px;">💡 Pas envie de démonter vous-même ?</p>
+        <p style="font-size: 14px; margin-bottom: 15px;">Découvrez notre solution clé en main avec prise en charge complète en garage</p>
+        <a href="https://refap.github.io/re-fap-landing/" target="_blank" class="btn btn-primary" style="display: block; text-align: center; font-size: 14px; padding: 10px;">
+            Voir l'offre garage →
+        </a>
     </div>
 
     <!-- Cookie Banner -->
@@ -1447,6 +1524,14 @@
             document.getElementById('bot-tooltip').style.display = 'none';
         }, 2000);
     }
+    
+    // Bannière Garage Nudge
+    setTimeout(() => {
+        if (!localStorage.getItem('garage-nudge-shown')) {
+            document.getElementById('garage-nudge').style.display = 'block';
+            localStorage.setItem('garage-nudge-shown', 'true');
+        }
+    }, 30000);
 
     document.addEventListener('DOMContentLoaded', function() {
         checkCookieConsent();
